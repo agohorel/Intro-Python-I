@@ -17,10 +17,7 @@ print(f1(1, 2))
 
 
 def f2(*args):
-    sum = 0
-    for x in args:
-        sum += x
-    return sum
+    return sum(args)
 
 
 print(f2(1))                    # Should print 1
@@ -38,11 +35,8 @@ print(f2(*a))    # Should print 22
 # arguments.
 # Note: Google "python default arguments" for a hint.
 
-def f3(a, b=None):
-    if b == None:
-        return a + 1
-    else:
-        return a + b
+def f3(a, b=1):        
+    return a + b
 
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
@@ -57,8 +51,8 @@ print(f3(8))     # Should print 9
 # Note: Google "python keyword arguments".
 
 def f4(**kwargs):
-    for i in kwargs:
-        print(f"key: {i}, value: {kwargs[i]}")
+    for k,v in kwargs.items():
+        print(f"key: {k}, value: {v}")
 
 # Should print
 # key: a, value: 12
@@ -77,4 +71,4 @@ d = {
 }
 
 # How do you have to modify the f4 call below to make this work?
-f4(val=d)
+f4(**d)

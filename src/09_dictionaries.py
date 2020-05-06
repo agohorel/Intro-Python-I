@@ -51,5 +51,5 @@ waypoints[0]["name"] = "not a real place"
 
 # Write a loop that prints out all the field values for all the waypoints
 for i in waypoints:
-    for f in i:
-        print(f, ":", i[f])
+    for k,v in i.items():
+        print(k, ":", v)
